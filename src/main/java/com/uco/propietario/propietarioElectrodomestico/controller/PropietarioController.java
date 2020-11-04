@@ -3,10 +3,7 @@ package com.uco.propietario.propietarioElectrodomestico.controller;
 import com.uco.propietario.propietarioElectrodomestico.command.PropietarioCommand;
 import com.uco.propietario.propietarioElectrodomestico.service.PropietarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +23,10 @@ public class PropietarioController {
     @GetMapping("/v1/{id}/propietario")
     private PropietarioCommand findById(@PathVariable int id){
         return propietarioService.findById(id);
+    }
+
+    @PostMapping("/agregar")
+    public void agregarProprietario(@RequestBody final PropietarioCommand propietarioCommand){
+        propietarioService.agregar(propietarioCommand);
     }
 }

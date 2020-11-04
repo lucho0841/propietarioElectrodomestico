@@ -8,5 +8,6 @@ import java.util.List;
 public interface PropietarioService {
     List<PropietarioCommand> findAll();
 
-    PropietarioCommand findById(int identificacion);
+    void agregar(PropietarioCommand propietarioCommand);
+    PropietarioCommand findById(int id);
 }

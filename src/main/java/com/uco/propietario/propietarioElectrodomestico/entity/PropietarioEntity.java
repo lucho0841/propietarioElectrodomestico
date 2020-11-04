@@ -28,28 +28,4 @@ public class PropietarioEntity {
     private String direccion;
     @Column(name="telefono")
     private String telefono;
-
-    public int getIdentificacion() {
-        return identificacion;
-    }
-
-    public String getNombrePropietario() {
-        return nombrePropietario;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public Date getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
 }

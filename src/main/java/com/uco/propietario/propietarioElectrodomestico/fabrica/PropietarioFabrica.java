@@ -16,7 +16,7 @@ public class PropietarioFabrica {
         return listaPropietarioCommand;
     }
 
-    public PropietarioCommand commandtoEntity(PropietarioEntity propietarioEntity) {
+    public static PropietarioCommand entityToCommand(PropietarioEntity propietarioEntity) {
         PropietarioCommand propietarioCommand = new PropietarioCommand();
         propietarioCommand.setIdentificacion(propietarioEntity.getIdentificacion());
         propietarioCommand.setNombrePropietario(propietarioEntity.getNombrePropietario());
@@ -28,4 +28,14 @@ public class PropietarioFabrica {
     }
 
 
+    public PropietarioEntity CommandToEntity(PropietarioCommand propietarioCommand) {
+        PropietarioEntity propietarioEntity = new PropietarioEntity();
+        propietarioEntity.setNombrePropietario(propietarioCommand.getNombrePropietario());
+        propietarioEntity.setIdentificacion(propietarioCommand.getIdentificacion());
+        propietarioEntity.setCorreo(propietarioCommand.getCorreo());
+        propietarioEntity.setDireccion(propietarioCommand.getDireccion());
+        propietarioEntity.setFechaInicio(propietarioCommand.getFechaInicio());
+        propietarioEntity.setTelefono(propietarioCommand.getTelefono());
+        return  propietarioEntity;
+    }
 }
